@@ -4,7 +4,11 @@
 
 第一个
 
-忽视逻辑 能用就行
+忽视逻辑 能用就行 求求别喷
+
+就用来转换时间 仅限美西美东和中国 
+
+用处不大 也不小
 
 下载time-converter.app.zip
 
@@ -14,5 +18,9 @@
 
 bug report 感激不尽
 
-Daniel Tian
+没钱认证开发者 所以Mac如何打开身份不明开发者的程序？
+https://www.zhihu.com/question/52623818
+
+
+蛋尼尔 田宇轩
 Nov 25th
