@@ -1,0 +1,355 @@
+//
+//  ViewController.swift
+//  Time Converter
+//
+//  Created by Daniel's MBP on 11/19/19.
+//  Copyright © 2019 Daniel's MBP. All rights reserved.
+//
+
+import Cocoa
+
+class ViewController: NSViewController
+{
+
+    @IBOutlet weak var Mychina: NSButton!
+    @IBOutlet weak var Myeastus: NSButton!
+    @IBOutlet weak var Mywestus: NSButton!
+    
+    @IBOutlet weak var Deschina: NSButton!
+    @IBOutlet weak var Deseastus: NSButton!
+    @IBOutlet weak var Deswestus: NSButton!
+   
+    @IBOutlet weak var datess: NSTextField!
+    @IBOutlet weak var hourss: NSTextField!
+    @IBOutlet weak var minutess:NSTextField!
+  
+    @IBOutlet weak var desdate: NSTextField!
+    @IBOutlet weak var deshour: NSTextField!
+    @IBOutlet weak var desminute: NSTextField!
+    
+    @IBOutlet weak var wintertimeoutlet: NSButton!
+    @IBOutlet weak var mytime: NSTextField!
+    @IBOutlet weak var destime: NSTextField!
+    
+    var a = 0
+    var b = 0
+    var c = 0
+    var d = 0
+    var e = 0
+    var f = 0
+    var summertime = 0
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+
+    override var representedObject: Any? {
+        didSet {
+        // Update the view, if already loaded.
+        }
+    }
+
+    @IBAction func myplace1(_ sender: Any) {
+        a = 1
+        mytime.stringValue = "China"
+    }
+    @IBAction func myplace2(_ sender: Any) {
+        b = 1
+        mytime.stringValue = "East US"
+    }
+    @IBAction func myplace3(_ sender: Any) {
+        c = 1
+        mytime.stringValue = "West US"
+    }
+    
+    
+    @IBAction func desplace1(_ sender: Any) {
+        d = 1
+        destime.stringValue = "China"
+    }
+    @IBAction func desplace2(_ sender: Any) {
+        e = 1
+        destime.stringValue = "East US"
+    }
+    @IBAction func desplace3(_ sender: Any) {
+        f = 1
+        destime.stringValue = "West US"
+    }
+    @IBAction func summertimeed(_ sender: Any) {
+        summertime = 1
+        
+    }
+    
+    
+    @IBAction func Convertgo(_ sender: Any)
+    {
+        
+        var datesint = datess.intValue
+        var hoursint = hourss.intValue
+        
+        
+        if a == 1
+        {
+            if e == 1
+            {
+                if summertime == 0
+                {
+                    var desdatesint = Int(datesint)
+                    var deshoursint = Int(hoursint)-13
+                    if deshoursint <= 0
+                    {
+                        var dif = 0-deshoursint
+                        var showdif = 24-dif
+                        deshour.stringValue = String(showdif)
+                        desdate.stringValue = String(desdatesint-1)
+                    }
+                    else
+                    {
+                        deshour.stringValue = String(deshoursint)
+                        desdate.stringValue = String(desdatesint)
+                    }
+                }
+                else
+                {
+                    var desdatesint = Int(datesint)
+                    var deshoursint = Int(hoursint)-12
+                    if deshoursint <= 0
+                    {
+                        var dif = 0-deshoursint
+                        
+                        var showdif = 24-dif
+                        deshour.stringValue = String(showdif)
+                        desdate.stringValue = String(desdatesint-1)
+                    }
+                    else
+                    {
+                        deshour.stringValue = String(deshoursint)
+                        desdate.stringValue = String(desdatesint)
+                    }
+                }
+            }
+            else if f == 1
+            {
+                if summertime == 0
+                {
+                    var desdatesint = Int(datesint)
+                    var deshoursint = Int(hoursint)-16
+                    if deshoursint <= 0
+                    {
+                        var dif = 0-deshoursint
+                        var showdif = 24-dif
+                        deshour.stringValue = String(showdif)
+                        desdate.stringValue = String(desdatesint-1)
+                    }
+                    else
+                    {
+                        deshour.stringValue = String(deshoursint)
+                        desdate.stringValue = String(desdatesint)
+                    }
+                }
+                else
+                {
+                    var desdatesint = Int(datesint)
+                    var deshoursint = Int(hoursint)-15
+                    if deshoursint <= 0
+                    {
+                        var dif = 0-deshoursint
+                        var showdif = 24-dif
+                        deshour.stringValue = String(showdif)
+                        desdate.stringValue = String(desdatesint-1)
+                    }
+                    else
+                    {
+                        deshour.stringValue = String(deshoursint)
+                        desdate.stringValue = String(desdatesint)
+                    }
+                }
+            }
+        }
+        else if b == 1
+        {
+            if d == 1
+            {
+                if summertime == 0
+                {
+                    var desdatesint = Int(datesint)
+                    var deshoursint = Int(hoursint) + 13
+                    if deshoursint >= 24
+                    {
+                        var dif = deshoursint - 24
+                        deshour.stringValue = String(dif)
+                        desdate.stringValue = String(desdatesint+1)
+                    }
+                    else
+                    {
+                        deshour.stringValue = String(deshoursint)
+                        desdate.stringValue = String(desdatesint)
+                    }
+                }
+                else
+                {
+                    var desdatesint = Int(datesint)
+                    var deshoursint = Int(hoursint) + 12
+                    if deshoursint <= 24
+                    {
+                        var dif = deshoursint - 24
+                        deshour.stringValue = String(dif)
+                        desdate.stringValue = String(desdatesint+1)
+                    }
+                    else
+                    {
+                        deshour.stringValue = String(deshoursint)
+                        desdate.stringValue = String(desdatesint)
+                    }
+                }
+            }
+            else if f == 1
+            {
+                if summertime == 0
+                {
+                    var desdatesint = Int(datesint)
+                    var deshoursint = Int(hoursint) - 3
+                    if deshoursint <= 0
+                    {
+                        var dif = 0-deshoursint
+                        var showdif = 24-dif
+                        deshour.stringValue = String(showdif)
+                        desdate.stringValue = String(desdatesint-1)
+                    }
+                    else
+                    {
+                        deshour.stringValue = String(deshoursint)
+                        desdate.stringValue = String(desdatesint)
+                    }
+                }
+                else
+                {
+                    var desdatesint = Int(datesint)
+                    var deshoursint = Int(hoursint)-3
+                    if deshoursint <= 0
+                    {
+                        var dif = 0-deshoursint
+                        var showdif = 24-dif
+                        deshour.stringValue = String(showdif)
+                        desdate.stringValue = String(desdatesint-1)
+                    }
+                    else
+                    {
+                        deshour.stringValue = String(deshoursint)
+                        desdate.stringValue = String(desdatesint)
+                    }
+                }
+            }
+        }
+        else if c == 1
+        {
+            if d == 1
+            {
+                if summertime == 0
+                {
+                    var desdatesint = Int(datesint)
+                    var deshoursint = Int(hoursint)+16
+                    if deshoursint >= 24
+                    {
+                        var dif = deshoursint-24
+                        deshour.stringValue = String(dif)
+                        desdate.stringValue = String(desdatesint+1)
+                    }
+                    else
+                    {
+                        deshour.stringValue = String(deshoursint)
+                        desdate.stringValue = String(desdatesint)
+                    }
+                }
+                else
+                {
+                    var desdatesint = Int(datesint)
+                    var deshoursint = Int(hoursint)+15
+                    if deshoursint >= 24
+                    {
+                        var dif = 0-deshoursint
+                        deshour.stringValue = String(dif)
+                        desdate.stringValue = String(desdatesint+1)
+                    }
+                    else
+                    {
+                        deshour.stringValue = String(deshoursint)
+                        desdate.stringValue = String(desdatesint)
+                    }
+                }
+            }
+            else if e == 1
+            {
+                if summertime == 0
+                {
+                    var desdatesint = Int(datesint)
+                    var deshoursint = Int(hoursint)+3
+                    if deshoursint >= 24
+                    {
+                        var dif = deshoursint-24
+                        deshour.stringValue = String(dif)
+                        desdate.stringValue = String(desdatesint+1)
+                    }
+                    else
+                    {
+                        deshour.stringValue = String(deshoursint)
+                        desdate.stringValue = String(desdatesint)
+                    }
+                }
+                else
+                {
+                    var desdatesint = Int(datesint)
+                    var deshoursint = Int(hoursint)-15
+                    if deshoursint >= 24
+                    {
+                        var dif = deshoursint-24
+                        deshour.stringValue = String(dif)
+                        desdate.stringValue = String(desdatesint+1)
+                    }
+                    else
+                    {
+                        deshour.stringValue = String(deshoursint)
+                        desdate.stringValue = String(desdatesint)
+                    }
+                }
+            }
+        }
+        desminute.stringValue = minutess.stringValue
+    }
+}
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+        /*}
+                else
+                {
+                    var desdatesint = Int(datesint)-1
+                    if desdatesint == 0
+                    {
+                        desdate.stringValue = "31/30"
+                    }
+                    else
+                    {
+                        var deshoursint = Int(hoursint)-1
+                        deshour.stringValue = String(deshoursint)
+                    }
+                }
+            }
+        }*/
+        
+        
+
+        //desdate.stringValue = String(desdatesint)
+        
+        //deshour.stringValue = "\(hour_num)+ 1"
+        //desminute.stringValue = "\(minute_num)"
