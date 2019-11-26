@@ -1,6 +1,10 @@
 # go
 
-wordy编程 忽视逻辑 能用就行
+从来没写过swift
+
+第一个
+
+忽视逻辑 能用就行
 
 下载time-converter.app.zip
 
