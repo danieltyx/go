@@ -1,4 +1,5 @@
-# Time-converter
+# Time-converter for mac
+时差转换器macOS系统版本
 
 从来没写过swift
 
